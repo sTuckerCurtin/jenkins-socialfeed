@@ -37,20 +37,20 @@ pipeline {
                 sh 'docker push tucker245/react-jenkins-social:latest'
             }
         }
+        
         stage('Deploy New Image to AWS EC2') {
             steps {
                 sh 'echo "Deploying to EC2 instance..."'
 
-                sshagent(['<NAME OF SSH CREDENTIALS>']) {
+                sshagent(['social-feed-linux-kp-ssh-credentials']) {
                     sh """
-                        SSH_COMMAND="ssh -o StrictHostKeyChecking=no <SERVER USER>@<SERVER IP>"
-                        \$SSH_COMMAND "docker stop <NAME OF CONTAINER> && docker rm <NAME OF CONTAINER>"
-                        \$SSH_COMMAND "docker pull <NAME OF IMAGE>:$BUILD_NUMBER"
-                        \$SSH_COMMAND "docker run -d -p 80:80 --name <NAME OF CONTAINER> <NAME OF IMAGE>:$BUILD_NUMBER"
+                        SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@18.117.81.69"
+                        \$SSH_COMMAND "docker stop festive_montalcini && docker rm festive_montalcini"
+                        \$SSH_COMMAND "docker pull tucker245/react-jenkins-social:latest"
+                        \$SSH_COMMAND "docker run -d -p 80:80 --name festive_montalcini tucker245/react-jenkins-social:latest"
                     """
                 }
-    }
-}
-        
+            }
+        }
     }
 }
