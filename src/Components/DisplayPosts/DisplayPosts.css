@@ -1,0 +1,12 @@
+.posts-div {
+  margin-top: 2em;
+  border: 1px;
+  border-radius: 25px;
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+  height: 1000px;
+  width: 700px;
+  box-shadow: 5px 10px #bdbdbd;
+  padding: 1em;
+}

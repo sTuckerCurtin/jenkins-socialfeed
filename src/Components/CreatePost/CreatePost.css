@@ -1,0 +1,33 @@
+.form-border-box {
+  margin-top: 2em;
+  border: 1px;
+  border-radius: 25px;
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+  height: 230px;
+  width: 700px;
+  box-shadow: 5px 10px #bdbdbd;
+  padding: 1em;
+}
+
+.custom-form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  /* Other styling... */
+  text-align: right;
+  clear: both;
+  float: left;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.button-space-top {
+  margin-top: 0.5em;
+  margin-left: 595px;
+}
