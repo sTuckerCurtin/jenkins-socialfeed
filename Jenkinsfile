@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build Optimized React Production Files') {
             steps {
-                sh 'npm run build'
+                sh 'npm run-script build'
             }
         }
 
